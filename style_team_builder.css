@@ -1,0 +1,468 @@
+#board-container{
+    width: 100%;
+}
+
+#tft-live{
+    margin: 30px 0;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/Team_builder_images/set-11-update-bg.png");
+    background-size: cover; 
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    text-align: left;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.divider{
+    width: 100%;
+    border: 1px solid #173131;
+}
+
+.buttons{
+    width: 40%;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+#clear{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    min-height: 35px;
+    color: #ffffff;
+    padding: 0 20px;
+    font-weight: 400;
+    align-items: center;
+    margin: auto;
+    border: 1px solid #173131;
+    border-radius: 2px;
+}
+
+#traits{
+    display: flex;
+    width: auto;
+    margin: auto;
+    align-items: center;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#traits p{
+    display: block;
+    width: auto;
+}
+
+.toggle-switch{
+    border-radius: 100px;
+    display: block;
+    width: 26px;
+    height: 12px;
+    position: relative;
+    margin-left: 10px;
+    background-color: #227aad;
+}
+
+.toggle-switch-active{
+    background-color: #123040;
+}
+
+.toggle-switch::before{
+    left: auto;
+    content: "";
+    background-color: #ffffff;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    position: absolute;
+    transform: translate(-50%);
+    right: -12px;
+}
+
+.toggle-switch-active::before{
+    right: 12px;
+}
+
+.side-bar{
+    min-width: 150px;
+    display: flex;
+    width: auto;
+    flex-wrap: wrap;
+    margin: 0 5px;
+}
+
+#board{
+    display: flex;
+    padding: 30px 0px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#board-builder{
+    display: flex;
+    padding: 0 30px;
+    align-content: flex-start;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+}
+
+#four-row{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 700px;
+    height: auto;
+    list-style-type: none;
+    font-family: "Encode Sans", sans-serif;
+    font-size: 15px;
+}
+
+.hex, .filled-hex{
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    width: 72px;
+    height: 40px;
+    margin: 20px 5px;
+    background-color: #102531;
+    border-left: 3px solid #173131;
+    border-right: 3px solid #173131;
+    background-size: auto 80px; /*imposta le dimensioni del background*/
+    background-position: 50%; /*Posiziona l'immagine al centro*/
+    cursor: pointer;
+}
+
+.filled-hex .champ-item-container{
+    cursor: pointer;
+    top: -25px;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+    position: absolute;
+}
+/*  classe wrapper che contiene la champ-icon*/
+.filled-hex .character-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*  Classe delle icone di oggetti e campioni che verranno caricati*/
+.filled-hex .character-icon{
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+}
+
+.shifted_hex{
+    margin-left: 12%;
+}
+
+.bot_hex, .top_hex{
+    width: 50px;
+    height: 50px;
+    left: 8.80px;
+    transform: scaleY(.5780) rotate(-45deg);    /*Con scaleY imposto un fattore di ridimensionamento dell'elemento rispetto asse Y*/
+    background: inherit;                        /*Con inherit l'elemento eredita la proprietà del contenitore*/
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.bot_hex{
+    bottom: -27px;
+    border-bottom: 4px solid #173131;
+    border-left: 4px solid #173131;
+}
+
+.top_hex{
+    top: -27px;
+    border-top: 4px solid #173131;
+    border-right: 4px solid #173131;
+}
+
+.bot_hex::after, .top_hex::after{
+    content: "";
+    position: absolute;
+    background: inherit;
+    transform-origin: 0 0;  /*posizione l'origine al centro */
+    width: 71.5px;
+    height: 41px;
+    transform: rotate(45deg) scaleY(1.7) translateY(-20.5px);
+}
+
+.bot_hex::after{
+    background-position: bottom;
+}
+
+.top_hex::after{
+    background-position: top;
+}
+
+.empty-list{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #88a0a7;
+    font-size: 16px;
+    border: 1px solid #173131;
+    background-color: #102531;
+    
+}
+
+#traits-list, #item-list{
+    flex-wrap: wrap;
+    max-width: 200px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+#item-container, #champions-container{
+    margin-top: 20px;
+    display: flex;
+    width: 60%;
+    background: #102531;
+    flex-direction: column;
+    border: 1px solid #173131;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#champions-container input.searchbar, #item-container input.searchbar{
+    margin: 0;
+    border: hidden;
+}
+
+#champions-container div.searchbar, #item-container div.searchbar{
+    border: hidden;
+    border-bottom: 1px solid #173131;
+    width: 100%;
+    padding: 3px;
+    border-radius: 0%;
+    justify-content: center;
+}
+
+input.searchbar{
+    padding-left: 0;
+}
+
+.gold{
+    width: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+}
+
+/*
+classi per funzione di dragging degli elementi
+*/
+.dragging{
+    opacity: 0.5;
+}
+
+.dragover{
+    background-color: #88a0a7;
+}
+
+
+/*Classi per la stilizzazione dei pulsanti per aggiungere campioni e oggetti alle rispettive liste*/
+.characters-list-wrapper{
+    margin-top: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+/*  container della champ icon che potrà essere cliccato e farà partire gli eventi*/
+.characters-list-wrapper .champ-item-container{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid green;
+}
+/*  classe wrapper che contiene la champ-icon*/
+.characters-list-wrapper .character-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*  Classe delle icone di oggetti e campioni che verranno caricati*/
+.characters-list-wrapper .character-icon{
+    width: 35px;
+    height: 35px;
+}
+
+img{
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.container{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.champ-search{
+    display: flex;
+    color: #ffffff;
+    border-left: 1px solid #173131;
+    font-family: "Encode Sans", sans-serif;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-width: 20px;
+}
+
+h4, h2, h1{
+    color: #ffffff;
+    font-family: "Encode Sans", sans-serif;
+    font-weight: 600;
+}
+
+h4{
+    font-size: 26px;
+}
+
+h2{
+    font-size: 22px;
+}
+
+h1{
+   font-size: 18px;
+}
+
+p{
+    color: #88a0a7;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* modale */
+#album-view {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#album-view .album {
+    margin: 10px;
+    border: 1px solid slategray;
+    padding: 5px;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+#album-view img {
+    max-width: 100%;
+  }
+
+
+@media(max-width: 600px)
+{
+    
+    #tft-live{
+        max-width: 90%;
+        margin: 300px auto 0 auto;
+    }
+    #four-row{
+        width: 100%;
+        max-width: 440px;
+    }
+
+    .bot_hex::after, .top_hex::after{
+        width: 25px;
+        height: 18px;
+    }
+    .hex{
+        width: 30px;
+        height: 15px;
+        background-size: auto 32px;
+        margin: 10px 5px;
+    }
+    .top_hex, .bot_hex{
+        width: 22px;
+        height: 22px;
+        left: 2px;
+    }
+
+    .top_hex{
+        top: -12px;
+    }
+
+    .bot_hex{
+        bottom: -12px;
+    }
+
+    #champions-container div.searchbar, #item-container div.searchbar{
+        flex-direction: column;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    header{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .buttons{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    #board-builder{
+        margin-top: 20px;
+        align-content: center;
+    }
+
+    .side-bar{
+        margin: auto;
+    }
+
+    #champions-container input.searchbar, #item-container input.searchbar{
+        width: 200px;
+        min-width: unset;
+    }
+    #champions-container div.searchbar, #item-container div.searchbar{
+        width: 80%;
+        margin: auto;
+    }
+}

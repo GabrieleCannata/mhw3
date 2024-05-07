@@ -1,0 +1,244 @@
+body{
+    margin: 0;
+    background-color: #0d202b;
+    user-select: none;
+}
+
+article{
+    height: 3vh;
+}
+
+.hidden{
+    display: none;
+}
+
+.fl{
+    display: flex;
+}
+
+nav#upperbar{
+    display: flex;
+    background-color: #0d202b;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar-btn{
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    background-color: #227aad;
+    border: none;
+    padding: 7px 12px;
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 3px;
+    align-items: center;
+    font-family: "Encode Sans", sans-serif;
+}
+
+#btn-icon{
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+    align-items: center;
+}
+
+#navbar{
+    background-color: #102531;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #173131;
+    justify-content: center;
+}
+
+nav#hamburger{
+    display: none;
+}
+
+.navBarSpan{
+    margin-left: 30px;
+    margin-right: 30px;
+    width: auto;
+    font: 14px "Encode Sans", sans-serif;
+}
+
+a{
+    color: #d5dae6;
+    text-decoration: none;
+}
+    
+a:hover{
+    color: #d47559;
+}
+
+#slogo{
+    color: #d5dae6;
+    margin: 10px;
+    font-weight: bolder;
+    font-family: "Encode Sans", sans-serif;
+}
+
+div.searchbar{
+    margin-left: auto;
+    flex-grow: 0;
+    padding: 2px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #17313a;
+    border-radius: 4px;
+}
+
+input.searchbar{
+    border-radius: 4px;
+    background: transparent;
+    justify-content: center;
+    min-width: 300px;
+    height: 35px;
+    border: none;
+    border-left: 1px solid #17313a;
+    padding-left: 10px;
+    color: #ffffff;
+}
+
+input::placeholder{
+    padding-left: 10px;
+    color: #babdd6;
+    font-family: "Encode Sans", sans-serif;
+}
+
+input.searchbar:focus{
+    border: 1px solid #d47559;
+    color: #ffffff;
+    padding-left: 10px;
+    font-family: "Encode Sans", sans-serif;
+}
+
+#search-icon{
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    transition: opacity .3s;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+div#logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+}
+
+img#logo{
+    width: 60px;
+    height: 60px;
+}
+
+ul, li{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font: 16px "Encode Sans", sans-serif;
+    align-items: center;
+    width: auto;
+}
+
+li:hover{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #d47559;
+}
+
+@media(min-width: 601px){
+    #mobile-menu{
+        display: none;
+    }
+}
+
+@media(max-width: 600px){
+    #upperbar div.searchbar{
+        display: none;    
+    }
+
+    #search-icon, #navbar-btn, nav#navbar{
+        display: none;
+    }
+
+    div.hamburger{
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px 0;
+    }
+
+    #x1{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: rotate(45deg);
+    }
+    
+    #x2{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: rotate(-45deg);
+    }
+
+    #hamburger-box{
+        position: absolute;
+        right: 30px;
+    }
+
+    #hamburger-box-x{
+        position: absolute;
+        right: 30px;
+        top: 20px;
+    }
+
+    #hamburger-box:hover, #hamburger-box-x:hover{
+        cursor: pointer;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 60px;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0d202b;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-link{
+        color: #ffffff;
+        font-family: "Encode Sans", sans-serif;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    ul, li{
+        display: list-item;
+    }
+    
+    li:hover{
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+
+    div#logo{
+        position: absolute;
+        left: 0;
+    }
+}
