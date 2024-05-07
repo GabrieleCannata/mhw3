@@ -254,7 +254,6 @@ function search(event){
 }
 let puuid;
 
-fetch(end_point_authorization), options;
 const form = document.querySelector('form');
 form.addEventListener('submit', search);
 
