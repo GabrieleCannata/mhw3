@@ -252,7 +252,7 @@ function search(event){
     //quindi pongo una costante che contiene il puuid del giocatore
 }
 
-const puuid = w4ecz0t1XiDWkyvFZbPv3IudTnE79Y50Uvy9GN6zZXcQrDuNRy7eVfGygy6X5nmdC3feSAh8n7F3Dw;
+const puuid = "w4ecz0t1XiDWkyvFZbPv3IudTnE79Y50Uvy9GN6zZXcQrDuNRy7eVfGygy6X5nmdC3feSAh8n7F3Dw";
 
 const form1 = document.querySelector('#player');
 form1.addEventListener('submit', search);
