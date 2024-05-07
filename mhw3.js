@@ -220,7 +220,7 @@ items_images_promise.then(onSuccess, onFail).then(onJson);
 /*
 Il codice seguente gestisce la parte delle REST API del sito che dovrà espletare la parte di ricerca delle informazioni dei giocatori
 */
-/*
+
 function onPuuid(json){
     console.log("puuid");
     puuid = json.puuid;
@@ -237,8 +237,8 @@ function search(event){
             Authorizaion: "Bearer " + token,
         }
     }
-*/
-/*    
+
+   
     const player = document.querySelector('#player-search-bar');
     const riot_id = player.value.split('#');    //separo il gamename dal gametag
     const riot_name = encodeURIComponent(riot_id[0]);
@@ -257,7 +257,7 @@ let puuid;
 fetch(end_point_authorization), options;
 const form = document.querySelector('form');
 form.addEventListener('submit', search);
-*/
+
 
 function onSpotifyJson(json) {
     const libreria = document.querySelector('#album-view');
@@ -290,7 +290,7 @@ function onSpotifyJson(json) {
     return response.json();
   }
   
-  function search(event)
+  function searchSpotify(event)
   {
     // Impedisci il submit del form
     event.preventDefault();
@@ -336,4 +336,4 @@ function onSpotifyJson(json) {
     }
   ).then(onTokenResponse).then(onTokenJson);
   const form = document.querySelector('form');
-  form.addEventListener('submit', search)
+  form.addEventListener('submit', searchSpotify)
